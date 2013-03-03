@@ -16,14 +16,14 @@ class BroemIpsum
 
   def make_a_paragraph # assembly of sentences into a paragraph
     paragraph = []
-    10.times { paragraph << make_a_sentence }
+    15.times { paragraph << make_a_sentence }
     paragraph.join(" ")
   end
 
   def make_a_sentence # capitalize, add phrases into sentence, period
     sentence = []
     sentence << capitalize
-    2.times { sentence << random_phrase }
+    3.times { sentence << random_phrase }
     sentence << period
     sentence.join(" ")
   end
