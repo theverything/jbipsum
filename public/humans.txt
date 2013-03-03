@@ -3,13 +3,15 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Jeffrey Horn -- Maker -- @theverythingy
 
 # THANKS
 
-    <name>
+    everyone
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    normalize.css, Modernizr
+    Sinatra, Zurb Foundation
+
