@@ -21,23 +21,18 @@ header {
 }
 
 article {
-    @include span-columns(12);
-
-    h3 {
-      @include span-columns(8);
-      @include shift(2);
-    }
-
-    form {
-      @include span-columns(8);
-      @include shift(2);
-    }
+    @include span-columns(8);
+    @include shift(2);
 }
 
 footer {
   @include span-columns(12);
   margin-top: 60px;
   text-align: center;
+}
+
+input[type=number]{
+  margin-left: 20px;
 }
 
 /**************Typography*************/
