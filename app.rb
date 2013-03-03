@@ -1,14 +1,13 @@
 require 'rubygems'
 require 'sinatra'
-require './lib/broem_ipsum'
+require './lib/jb_ipsum'
 
 get '/' do
   erb :index
 end
 
 post '/swag' do
-  bro = BroemIpsum.new(params[:number].to_i)
-  bro.lets_do_this
-  @paragraphs = bro.paragraphs
+  baby = JBIpsum.new(params[:paragraphs].to_i)
+  @paragraphs = baby.lets_do_this
   erb :swag
 end
