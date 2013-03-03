@@ -47,7 +47,7 @@ class JBIpsum
 
   def make_a_paragraph # assembly of sentences into a paragraph
     paragraph = []
-    10.times { paragraph << make_a_sentence }
+    8.times { paragraph << make_a_sentence }
     paragraph.join(" ")
   end
 
