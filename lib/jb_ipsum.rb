@@ -2,20 +2,22 @@ class JBIpsum
 
   attr_reader :swag
 
-  def initialize(number_of_paragraphs) @number_of_paragraphs = number_of_paragraphs 
+  def initialize(number_of_paragraphs)
+  @number_of_paragraphs = number_of_paragraphs
+  @paragraphs = []
   @swag = [
     "when I met you girl my heart went knock knock",
     "swag",
     "baby, baby, baby, oh",
     "I'ma make you shine bright like you're laying in the snow, burr",
     "swaggie",
-    "swag swag swag, on you, chillin by the fire why we eaten' fondue",
+    "swag swag swag, on you, chillin by the fire while we eaten' fondue",
     "I could be your Buzz Lightyear fly across the globe",
     "no matter how much I try, I can't figure out how to not be adorable",
     "it's a Bieber world live it or die",
     "smile on your face, even though your heart is frowning",
     "we don't need no wings to fly",
-    "I don't know if this makes sense but, you're my hallelujah",
+    "got your girlfriend at my crib watching Netflix",
     "man, we steppin' out like whoa",
     "no one can stop me",
     "I make good grilled cheese and I like girls",
@@ -30,13 +32,17 @@ class JBIpsum
     "if I was your boyfriend, I'd never let you go",
     "but something would be nothing",
     "let the music blast we gon' do our dance",
-    "ooh no, ooh no, ooh"
+    "ooh no, ooh no, ooh",
+    "canada",
+    "I'm all fancy, yeah I'm popping Pellegrino",
+    "you know I'm a real OG and baby I ain't from the TO",
+    "what you got, a billion could've never bought",
+    "don't be so cold, we could be fire"
     ] 
-    @paragraphs = []
 
   end
 
-  def lets_do_this #final assembly of paragraphs
+  def lets_do_this # final assembly of paragraphs
     if @number_of_paragraphs > 10
       10.times { @paragraphs << make_a_paragraph }
     else
@@ -68,7 +74,7 @@ class JBIpsum
     random_phrase + "."
   end
 
-  def random_phrase
+  def random_phrase # a random phrase from the array
     random_num = rand(0..(@swag.length - 1))
     @swag[random_num]
   end
