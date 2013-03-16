@@ -21,8 +21,8 @@ describe JBIpsum do
 
   describe "#random_phrase" do
 
-    it "should return a random phrase from @swag" do
-      @baby.swag.should include(@baby.random_phrase)
+    it "should return a random phrase from SWAG" do
+      JBIpsum::SWAG.should include(@baby.random_phrase)
     end
 
   end
@@ -33,22 +33,12 @@ describe JBIpsum do
       @baby.period.should match(/\A[\w\s,']{2,}\.\z/)
     end
 
-    it "should not alter @swag" do
-      @baby2.period
-      @baby2.swag.should match_array(@baby.swag)
-    end
-
   end
 
   describe "#capitalize" do
 
     it "should return a string with the first letter capitalized" do
       @baby.capitalize.should match(/\A[A-Z][\w\s,']{2,}\z/)
-    end
-
-    it "should not alter @swag" do
-      @baby2.capitalize
-      @baby2.swag.should match_array(@baby.swag)
     end
 
   end
@@ -59,22 +49,12 @@ describe JBIpsum do
       @baby.make_a_sentence.should match(/\A[A-Z][\w\s,']{5,}\.\z/)
     end
 
-    it "should not alter @swag" do
-      @baby2.make_a_sentence
-      @baby2.swag.should match_array(@baby.swag)
-    end
-
   end
 
   describe "#make_a_paragraph" do
 
     it "should return a paragraph made up of sentences" do
       @baby.make_a_paragraph.should match(/^[A-Z][\w\s',\.]{10,}\.$/)
-    end
-
-    it "should not alter @swag" do
-      @baby2.make_a_paragraph
-      @baby2.swag.should match_array(@baby.swag)
     end
 
   end

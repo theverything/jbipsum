@@ -1,11 +1,6 @@
 class JBIpsum
 
-  attr_reader :swag
-
-  def initialize(number_of_paragraphs)
-  @number_of_paragraphs = number_of_paragraphs
-  @paragraphs = []
-  @swag = [
+  SWAG = [
     "when I met you girl my heart went knock knock",
     "swag",
     "baby, baby, baby, oh",
@@ -40,6 +35,10 @@ class JBIpsum
     "don't be so cold, we could be fire"
     ] 
 
+  def initialize(number_of_paragraphs)
+    @number_of_paragraphs = number_of_paragraphs
+    @paragraphs = []
+  
   end
 
   def lets_do_this # final assembly of paragraphs
@@ -75,8 +74,8 @@ class JBIpsum
   end
 
   def random_phrase # a random phrase from the array
-    random_num = rand(0..(@swag.length - 1))
-    @swag[random_num]
+    random_num = rand(0..(SWAG.length - 1))
+    SWAG[random_num]
   end
 
 end
