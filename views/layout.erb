@@ -16,7 +16,7 @@
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
   </head>
   <body>
-    <div id="container">
+    <div id="main">
       <!--[if lt IE 7]>
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
       <![endif]-->
@@ -24,22 +24,16 @@
         <a href="/"><img src="img/jb_top.png"></a>
       </header>
       <hr>
-      <div id="main">
-
-        <%= yield %>
-        <section>
-          <article>
-            <h3>Baby, baby, baby, how many paragraphs?
-            <input type="number" name="paragraphs" min="1" max="10" form="paragraphs"></h3>
-          </article>
-          <article>
-            <form action="/swag" method="post" id="paragraphs">
-              <input class="button large expand radius" type="submit" value="Swag">
-            </form>
-          </article>
-        </section>
-
-      </div>
+      <%= yield %>
+      <section>
+        <h3>Baby, baby, baby, how many paragraphs?
+        <input type="number" name="paragraphs" min="1" max="10" form="paragraphs"></h3>
+      </section>
+      <section>
+        <form action="/swag" method="post" id="paragraphs">
+          <input type="submit" value="Swag">
+        </form>
+      </section>
       <footer>
         <iframe src="http://ghbtns.com/github-btn.html?user=theverything&type=follow"
   allowtransparency="true" frameborder="0" scrolling="0" width="144" height="20"></iframe>
