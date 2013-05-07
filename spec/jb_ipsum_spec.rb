@@ -9,11 +9,11 @@ describe JBIpsum do
 
   describe "#new" do
 
-    it "should return a new instance of JBIpsum" do
+    it "returns a new instance of JBIpsum" do
       @baby.should be_an_instance_of JBIpsum
     end
 
-    it "should throw an error when given two or more params" do
+    it "throws an error when given two or more params" do
       lambda { JBIpsum.new(1,2) }.should raise_error ArgumentError
     end
 
@@ -21,7 +21,7 @@ describe JBIpsum do
 
   describe "#random_phrase" do
 
-    it "should return a random phrase from SWAG" do
+    it "returns a random phrase from SWAG" do
       JBIpsum::SWAG.should include(@baby.random_phrase)
     end
 
@@ -29,7 +29,7 @@ describe JBIpsum do
 
   describe "#period" do
 
-    it "should return a string with a period on the end" do
+    it "returns a string with a period on the end" do
       @baby.period.should match(/\A[\w\s,']{2,}\.\z/)
     end
 
@@ -37,7 +37,7 @@ describe JBIpsum do
 
   describe "#capitalize" do
 
-    it "should return a string with the first letter capitalized" do
+    it "returns a string with the first letter capitalized" do
       @baby.capitalize.should match(/\A[A-Z][\w\s,']{2,}\z/)
     end
 
@@ -45,7 +45,7 @@ describe JBIpsum do
 
   describe "#make_a_sentence" do
 
-    it "should return a full sentence with a capitalized letter in the front and a period on the end" do
+    it "returns a full sentence with a capitalized letter in the front and a period on the end" do
       @baby.make_a_sentence.should match(/\A[A-Z][\w\s,']{5,}\.\z/)
     end
 
@@ -53,7 +53,7 @@ describe JBIpsum do
 
   describe "#make_a_paragraph" do
 
-    it "should return a paragraph made up of sentences" do
+    it "returns a paragraph made up of sentences" do
       @baby.make_a_paragraph.should match(/^[A-Z][\w\s',\.]{10,}\.$/)
     end
 
@@ -61,11 +61,11 @@ describe JBIpsum do
 
   describe "#lets_do_this" do
 
-    it "should return 3 paragraphs when passed 3 at initializtion" do
+    it "returns 3 paragraphs when passed 3 at initializtion" do
       @baby.lets_do_this.length.should eq(3)
     end
 
-    it "sould limit the number of paragraphs to 10" do
+    it "limits the number of paragraphs to 10" do
       oh_baby = JBIpsum.new(20)
       oh_baby.lets_do_this.length.should eq(10)
     end
