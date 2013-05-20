@@ -41,7 +41,7 @@ class JBIpsum
   
   end
 
-  def lets_do_this # final assembly of paragraphs
+  def return_requested_paragraphs
     if @number_of_paragraphs > 10
       10.times { @paragraphs << make_a_paragraph }
     else

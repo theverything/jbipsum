@@ -59,15 +59,15 @@ describe JBIpsum do
 
   end
 
-  describe "#lets_do_this" do
+  describe "#return_requested_paragraphs" do
 
     it "returns 3 paragraphs when passed 3 at initializtion" do
-      @baby.lets_do_this.length.should eq(3)
+      @baby.return_requested_paragraphs.length.should eq(3)
     end
 
     it "limits the number of paragraphs to 10" do
       oh_baby = JBIpsum.new(20)
-      oh_baby.lets_do_this.length.should eq(10)
+      oh_baby.return_requested_paragraphs.length.should eq(10)
     end
 
   end
