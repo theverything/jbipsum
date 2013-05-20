@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class JBIpsum
 
   SWAG = [
@@ -74,7 +76,7 @@ class JBIpsum
   end
 
   def random_phrase
-    random_num = rand(0..(SWAG.length - 1))
+    random_num = SecureRandom.random_number(SWAG.length)
     SWAG[random_num]
   end
 
