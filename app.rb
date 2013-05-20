@@ -8,7 +8,7 @@ end
 
 post '/swag' do
   baby = JBIpsum.new(params[:paragraphs].to_i)
-  @paragraphs = baby.lets_do_this
+  @paragraphs = baby.return_requested_paragraphs
   erb :swag
 end
 
