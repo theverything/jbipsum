@@ -33,12 +33,12 @@ class JBIpsum
     "you know I'm a real OG and baby I ain't from the TO",
     "what you got, a billion could've never bought",
     "don't be so cold, we could be fire"
-    ] 
+    ]
 
   def initialize(number_of_paragraphs)
     @number_of_paragraphs = number_of_paragraphs
     @paragraphs = []
-  
+
   end
 
   def return_requested_paragraphs
@@ -50,13 +50,13 @@ class JBIpsum
     @paragraphs
   end
 
-  def make_a_paragraph # assembly of sentences into a paragraph
+  def make_a_paragraph
     paragraph = []
     8.times { paragraph << make_a_sentence }
     paragraph.join(" ")
   end
 
-  def make_a_sentence # capitalize, add phrases into sentence, period
+  def make_a_sentence
     sentence = []
     sentence << capitalize
     sentence << random_phrase
@@ -69,11 +69,11 @@ class JBIpsum
     random_phrase.sub(/\A[a-z]/) { |x| x.upcase }
   end
 
-  def period # add period to end of phrase
+  def period
     random_phrase + "."
   end
 
-  def random_phrase # a random phrase from the array
+  def random_phrase
     random_num = rand(0..(SWAG.length - 1))
     SWAG[random_num]
   end

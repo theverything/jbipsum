@@ -73,20 +73,3 @@ describe JBIpsum do
   end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
