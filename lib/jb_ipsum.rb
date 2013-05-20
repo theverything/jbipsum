@@ -64,9 +64,9 @@ class JBIpsum
     sentence.join(" ")
   end
 
-  def capitalize # capitalize first letter of phrase
-    phrase = random_phrase
-    phrase[0].capitalize + phrase.slice(1..-1)
+  # using sub to find and capitalize first letter - http://rubular.com/r/NHjCXV74yp
+  def capitalize
+    random_phrase.sub(/\A[a-z]/) { |x| x.upcase }
   end
 
   def period # add period to end of phrase
