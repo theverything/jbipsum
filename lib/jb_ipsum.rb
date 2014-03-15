@@ -37,10 +37,11 @@ class JBIpsum
     "don't be so cold, we could be fire"
     ]
 
-  def initialize(number_of_paragraphs)
-    @number_of_paragraphs = number_of_paragraphs
-    @paragraphs = []
+    attr_reader :number_of_paragraphs
 
+  def initialize(number_of_paragraphs)
+    @number_of_paragraphs = number_of_paragraphs || 1
+    @paragraphs = []
   end
 
   def return_requested_paragraphs
@@ -76,8 +77,7 @@ class JBIpsum
   end
 
   def random_phrase
-    random_num = SecureRandom.random_number(SWAG.length)
-    SWAG[random_num]
+    SWAG[SecureRandom.random_number(SWAG.length)]
   end
 
 end

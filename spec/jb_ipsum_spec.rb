@@ -17,6 +17,10 @@ describe JBIpsum do
       lambda { JBIpsum.new(1,2) }.should raise_error ArgumentError
     end
 
+    it "defaults to one paragraph when given nil" do
+      JBIpsum.new(nil).number_of_paragraphs.should == 1
+    end
+
   end
 
   describe "#random_phrase" do
