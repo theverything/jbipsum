@@ -12,7 +12,7 @@ body {
 
 img {
   max-width: 100%;
-
+  border: 0;
 }
 
 #main {
@@ -23,7 +23,7 @@ header {
   @include span-columns(12);
 }
 
-section {
+section { 
     @include span-columns(8);
     @include shift(2);
 }
@@ -35,7 +35,9 @@ footer {
 }
 
 input[type=number]{
-  margin-left: 20px;
+  margin-left: 1em;
+  width: 2.5em;
+  text-align: center;
 }
 
 input[type=submit]{
