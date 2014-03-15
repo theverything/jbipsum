@@ -26,8 +26,10 @@
       <hr>
       <%= yield %>
       <section>
-        <h3>Baby, baby, baby, how many paragraphs?
-        <input type="number" name="paragraphs" min="1" max="10" form="paragraphs"></h3>
+        <h3>
+          Baby, baby, baby, how many paragraphs?
+          <input type="number" name="paragraphs" min="1" max="10" form="paragraphs" placeholder="<%= @paragraphs.length %>">
+        </h3>
       </section>
       <section>
         <form action="/swag" method="post" id="paragraphs">
