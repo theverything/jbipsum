@@ -38,10 +38,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon
-  neat
+  bourbon (= 3.1.1)
+  neat (= 1.2.0)
   rake
-  rspec
+  rspec (= 2.13.0)
   sass
   sinatra
   thin
