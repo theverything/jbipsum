@@ -13,7 +13,8 @@ get '/swag' do
 end
 
 post '/swag' do
-  baby = JBIpsum.new(params[:paragraphs].to_i)
+  p = params[:paragraphs].to_i.zero? ? 1 : params[:paragraphs].to_i
+  baby = JBIpsum.new(p)
   @paragraphs = baby.return_requested_paragraphs
   erb :swag
 end
