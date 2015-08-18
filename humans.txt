@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jeffrey Horn -- Maker -- @theverythingy
+
+# THANKS
+
+    everyone
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    normalize.css, Modernizr
+    Sinatra, Zurb Foundation
+
