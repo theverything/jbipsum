@@ -1,62 +1,36 @@
 import React, { Component } from 'react';
-import JBIpsum from './jb_ipsum';
-
-class Paragraphs extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    return (
-      <div>
-        <section>
-          {this.props.content.map(this.toParagraph)}
-        </section>
-        <hr/>
-      </div>
-    );
-  }
-
-  toParagraph(p, i) {
-    return (<p key={i} >{p}</p>);
-  }
-}
+import jbIpsum from './jbIpsum';
 
 export default class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-    this.state.paragraphs = [];
-    this.state.count = 0;
-  }
+  state = {
+    paragraphs: [],
+    count: 1,
+  };
+
+  onClick = () => this.setState({ paragraphs: jbIpsum(this.state.count) });
+
+  onChange = e => this.setState({ count: Number(e.target.value) });
 
   render() {
-    var {paragraphs} = this.state;
+    const { paragraphs, count } = this.state;
+    const hasParagraphs = Boolean(paragraphs.length);
 
     return (
       <div>
-        {paragraphs.length ? <Paragraphs content={paragraphs}/> : ''}
+        {hasParagraphs && [
+          <section key="section">{paragraphs.map((p, i) => <p key={i}>{p}</p>)}</section>,
+          <hr key="hr" />,
+        ]}
         <section>
-          <h3>Baby, baby, baby, how many paragraphs?
-            <input ref='value' type="number"
-              name="paragraphs" min="1" max="10"
-              placeholder={this.state.count}/>
+          <h3>
+            Baby, baby, baby, how many paragraphs?
+            <input type="number" name="paragraphs" min="1" max="10" value={count} onChange={this.onChange} />
           </h3>
         </section>
         <section>
-          <input type="submit" value='Swag' onClick={this.onClick.bind(this)}/>
+          <input type="submit" value="Swag" onClick={this.onClick} />
         </section>
       </div>
     );
-  }
-
-  onClick(e) {
-    e.preventDefault();
-
-    var count = this.refs.value.getDOMNode().value;
-    var jb = new JBIpsum(count);
-    var paragraphs = jb.return_requested_paragraphs();
-
-    this.setState({paragraphs, count});
   }
 }
